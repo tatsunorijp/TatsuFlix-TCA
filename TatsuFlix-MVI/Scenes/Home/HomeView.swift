@@ -50,7 +50,6 @@ struct HomeView: View {
   }
 }
 
-
 // Preview Test
 struct HomeViewPreview: View {
   var body: some View {

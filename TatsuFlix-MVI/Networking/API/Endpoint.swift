@@ -14,7 +14,7 @@ enum Endpoint {
   var path: String {
     switch self {
     case .shows: "/shows"
-    case let .episodes(showId): "/shows\(showId)/episodes"
+    case let .episodes(showId): "/shows/\(showId)/episodes"
     }
   }
 
