@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		08082C0D301694B80013AF2D /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 08082C0C301694B80013AF2D /* ComposableArchitecture */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		08076C7D3015A94C00B48B23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08082C0D301694B80013AF2D /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				08076C6F3015A94B00B48B23 /* TatsuFlix-MVI */,
 				08076C7F3015A94C00B48B23 /* TatsuFlix-MVITests */,
 				08076C893015A94C00B48B23 /* TatsuFlix-MVIUITests */,
+				08082C0B301694B80013AF2D /* Frameworks */,
 				08076C6E3015A94B00B48B23 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +96,13 @@
 				08076C863015A94C00B48B23 /* TatsuFlix-MVIUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		08082C0B301694B80013AF2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,7 @@
 			);
 			name = "TatsuFlix-MVI";
 			packageProductDependencies = (
+				08082C0C301694B80013AF2D /* ComposableArchitecture */,
 			);
 			productName = "TatsuFlix-MVI";
 			productReference = 08076C6D3015A94B00B48B23 /* TatsuFlix-MVI.app */;
@@ -195,6 +209,9 @@
 			);
 			mainGroup = 08076C643015A94B00B48B23;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				08082C06301692420013AF2D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 08076C6E3015A94B00B48B23 /* Products */;
 			projectDirPath = "";
@@ -570,6 +587,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08082C06301692420013AF2D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.26.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08082C0C301694B80013AF2D /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08082C06301692420013AF2D /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08076C653015A94B00B48B23 /* Project object */;
 }
