@@ -23,17 +23,7 @@ struct HomeStore {
     Reduce { state, action in
       switch action {
       case .fetchShows:
-        state.phase = .loading
-        return .run { [page = state.page] send in
-          do {
-            let newShows = try await service.send(GetShowsRequest(page: page))
-            try await Task.sleep(for: .seconds(3))
-            await send(.fetchShowsCompleted(newShows))
-          } catch {
-            await send(.fetchShowsFailed(error))
-          }
-          
-        }
+        return fetchShows(state: &state, page: state.page)
       case let .fetchShowsCompleted(receivedShows):
         state.phase = .ready
         state.shows = receivedShows
@@ -49,5 +39,17 @@ struct HomeStore {
       }
     }
     .forEach(\.path, action: \.path)
+  }
+
+  private func fetchShows(state: inout State, page: Int) -> Effect<Action> {
+    state.phase = .loading
+    return .run { [page = state.page] send in
+      do {
+        let newShows = try await service.send(GetShowsRequest(page: page))
+        await send(.fetchShowsCompleted(newShows))
+      } catch {
+        await send(.fetchShowsFailed(error))
+      }
+    }
   }
 }

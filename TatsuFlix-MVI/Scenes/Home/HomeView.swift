@@ -11,6 +11,10 @@ import ComposableArchitecture
 struct HomeView: View {
   @Bindable var store: StoreOf<HomeStore>
   
+  let columns: [GridItem] = Array(
+    repeating: .init(.flexible()), count: 2
+  )
+  
   var body: some View {
     switch store.phase {
     case .ready:
@@ -31,17 +35,29 @@ struct HomeView: View {
   
   private var readyView: some View {
     return NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
-      List(store.shows) { show in
-        VStack {
-          AsyncImageView(urlString: show.image?.medium)
-          Text(show.name)
-          Text(show.summary ?? "")
-            .padding(.bottom, 44)
+      ScrollView {
+        LazyVGrid(columns: columns) {
+          ForEach(store.shows, id: \.id) { show in
+            VStack {
+              AsyncImageView(urlString: show.image?.medium)
+                .frame(width: 100, height: 150)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+
+                HeadlineText(show.name, isBold: true)
+                HStack {
+                  BodyText("Rating")
+                  BodyText(String(format: "%.2f", show.rating.average ?? 0.0))
+                }
+            }
+            .onTapGesture {
+              store.send(.showDetails(for: show))
+            }
+            .padding(.top, 16)
+          }
         }
-        .onTapGesture {
-          store.send(.showDetails(for: show))
-        }
+        .padding(.top)
       }
+      .navigationTitle("TatsuFlix")
     } destination: { store in
       switch store.case {
       case let .showDetails(store):
