@@ -33,6 +33,7 @@ struct HomeView: View {
     return NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
       List(store.shows) { show in
         VStack {
+          AsyncImageView(urlString: show.image?.medium)
           Text(show.name)
           Text(show.summary ?? "")
             .padding(.bottom, 44)
@@ -68,7 +69,7 @@ struct HomeViewPreview: View {
               store: Store(initialState: HomeStore.State(
                 shows: []
               )) {
-                HomeStore(service: NetworkClient())
+                HomeStore()
               }
             )
           case .movieDetails:

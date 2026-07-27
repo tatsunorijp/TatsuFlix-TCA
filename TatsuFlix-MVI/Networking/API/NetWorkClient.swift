@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class NetworkClient {
+protocol NetworkClientProtocol {
+  func send<T: APIRequest>(_ request: T) async throws -> T.Response
+}
+
+final class NetworkClient: NetworkClientProtocol {
   func send<T: APIRequest>(_ request: T) async throws -> T.Response {
     guard let url = request.url else {
       throw ApiError.invalidURL

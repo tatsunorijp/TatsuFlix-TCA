@@ -9,19 +9,27 @@ import Foundation
 import ComposableArchitecture
 
 extension ShowDetailsStore {
+  @Reducer
+  enum Destination {
+    case showDetails(EpisodesStore)
+  }
+
   @ObservableState
   struct ShowDetailsState {
-    var phase: ShowDetailsPhase
+    var phase: Phase
     var show: ShowResponse
+    @Presents var destination: Destination.State?
   }
   
-  enum ShowDetailsPhase: Equatable {
+  enum Phase: Equatable {
     case ready
   }
   
-  enum ShowDetailsActions {
+  @CasePathable
+  enum ShowDetailsAction {
     case saveFavorite
     case removeFavorite
-    case seeEpisodesDetails
+    case presentEpisodesDetails(showId: String)
+    case destination(PresentationAction<Destination.Action>)
   }
 }

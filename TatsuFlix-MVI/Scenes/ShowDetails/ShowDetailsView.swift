@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ShowDetailsView: View {
-  let store: StoreOf<ShowDetailsStore>
+  @Bindable var store: StoreOf<ShowDetailsStore>
   
     var body: some View {
       let show = store.show
@@ -27,7 +27,11 @@ struct ShowDetailsView: View {
           }
         }
         Button("Episodes") {
-          
+          let showId = "\(store.state.show.id)"
+          store.send(.presentEpisodesDetails(showId: showId))
+        }
+        .sheet(item: $store.scope(state: \.destination?.showDetails, action: \.destination.showDetails)) { store in
+          EpisodesView(store: store)
         }
       }
     }

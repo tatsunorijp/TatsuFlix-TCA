@@ -13,7 +13,7 @@ extension EpisodesStore {
   struct EpisodesState {
     var showId: String
     var phase: EpisodesPhase = .loading
-    var episodes: [EpisodeResponse] = []
+    var showSeasons: [ShowSeason] = []
   }
   
   enum EpisodesPhase: Equatable {

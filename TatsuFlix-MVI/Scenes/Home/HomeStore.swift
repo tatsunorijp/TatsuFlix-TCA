@@ -13,7 +13,11 @@ struct HomeStore {
   typealias State = HomeState
   typealias Action = HomeActions
 
-  let service: NetworkClient
+  let service: NetworkClientProtocol
+  
+  init(service: NetworkClientProtocol = NetworkClient()) {
+    self.service = service
+  }
 
   var body: some Reducer<State, Action> {
     Reduce { state, action in

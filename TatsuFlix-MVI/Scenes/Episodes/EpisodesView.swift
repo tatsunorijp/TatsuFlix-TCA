@@ -26,11 +26,15 @@ struct EpisodesView: View {
   }
 
   private var readyView: some View {
-    List(store.episodes) { episode in
-      VStack {
-        Text(episode.name)
-        Text("\(episode.number)")
-        Text("\(episode.season)")
+    List(store.showSeasons) { season in
+      Text("Season \(season.seasonNumber)")
+      ForEach(season.episodes) { episode in
+        VStack {
+          AsyncImageView(urlString: episode.image?.medium)
+          Text(episode.name)
+          Text("\(episode.number)")
+          Text("\(episode.season)")
+        }
       }
     }
   }

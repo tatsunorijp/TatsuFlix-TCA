@@ -11,8 +11,8 @@ import ComposableArchitecture
 @Reducer
 struct ShowDetailsStore {
   typealias State = ShowDetailsState
-  typealias Action = ShowDetailsActions
-  
+  typealias Action = ShowDetailsAction
+
   var body: some Reducer<State, Action> {
     Reduce { state, action in
       switch action {
@@ -20,10 +20,13 @@ struct ShowDetailsStore {
         return .none
       case .removeFavorite:
         return .none
-      case .seeEpisodesDetails:
+      case let .presentEpisodesDetails(showId):
+        state.destination = .showDetails(.init(showId: showId))
+        return .none
+      case .destination:
         return .none
       }
     }
+    .ifLet(\.$destination, action: \.destination)
   }
-  
 }
