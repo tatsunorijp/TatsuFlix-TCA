@@ -13,6 +13,15 @@ The project is focused on a unidirectional data-flow style: views render state, 
 - Reusable UI components for async images, loading state, typography, and spacing tokens.
 - Generic networking layer built around typed API requests.
 
+## Screenshots
+
+<p>
+  <img src="TatsuFlix-MVI/AppScreenshots/home.png" alt="Home screen" width="250">
+  <img src="TatsuFlix-MVI/AppScreenshots/showDetails.png" alt="Show details screen" width="250">
+  <img src="TatsuFlix-MVI/AppScreenshots/seasons.png" alt="Collapsed seasons screen" width="250">
+  <img src="TatsuFlix-MVI/AppScreenshots/Season-episodes.png" alt="Expanded season episodes screen" width="250">
+</p>
+
 ## Architecture
 
 The app uses The Composable Architecture for feature state management.
