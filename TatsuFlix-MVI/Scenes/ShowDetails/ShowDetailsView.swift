@@ -22,13 +22,13 @@ struct ShowDetailsView: View {
           .clipped()
           .clipShape(RoundedRectangle(cornerRadius: 10))
         
-        VStack(alignment: .leading, spacing: 8) {
-          HeadlineText(show.name, isBold: true)
+        DetailsSections {
+          TitleText(show.name, isBold: true)
           BodyText(show.summary?.removeHTMLTags() ?? "")
             .padding(.bottom)
           
           if !show.genres.isEmpty {
-            VStack(alignment: .leading, spacing: 8) {
+            DetailsSections {
               HeadlineText("Genres", isBold: true)
               HStack {
                 ForEach(show.genres, id: \.self) { genre in
@@ -39,7 +39,7 @@ struct ShowDetailsView: View {
             .padding(.bottom)
           }
           
-          VStack(alignment: .leading, spacing: 8) {
+          DetailsSections {
             HeadlineText("Schedule", isBold: true)
             ScrollView(.horizontal, showsIndicators: false) {
               HStack(spacing: 12) {
@@ -51,7 +51,7 @@ struct ShowDetailsView: View {
             .padding(.bottom)
             
             if !show.schedule.time.isEmpty {
-              VStack(alignment: .leading, spacing: 8) {
+              DetailsSections {
                 BodyText("Exhibition time", isBold: true)
                 BodyText(show.schedule.time)
               }
@@ -60,14 +60,14 @@ struct ShowDetailsView: View {
             }
           }
           
-          VStack(alignment: .leading, spacing: 8) {
+          DetailsSections {
             BodyText("Status", isBold: true)
             BodyText(show.status)
           }
           .padding(.bottom)
           
           if let rating = show.rating.average {
-            VStack(alignment: .leading, spacing: 8) {
+            DetailsSections {
               BodyText("Rating", isBold: true)
               BodyText("\(rating)")
             }
@@ -87,6 +87,20 @@ struct ShowDetailsView: View {
     .ignoresSafeArea(edges: .top)
     .sheet(item: $store.scope(state: \.destination?.showDetails, action: \.destination.showDetails)) { store in
       EpisodesView(store: store)
+    }
+  }
+}
+
+private struct DetailsSections<Content: View>: View {
+  let content: Content
+  
+  init(@ViewBuilder content: () -> Content) {
+    self.content = content()
+  }
+  
+  var body: some View {
+    VStack(alignment: .leading, spacing: Tokens.Spacing.small.rawValue) {
+      content
     }
   }
 }
