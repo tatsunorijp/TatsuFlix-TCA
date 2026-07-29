@@ -49,7 +49,13 @@ struct SearchStore {
       case .searchFailed:
         state.phase = .failed
         return .none
+      case let .showDetails(show):
+        state.path.append(.showDetails(.init(phase: .ready, show: show)))
+        return .none
+      case .path:
+        return .none
       }
     }
+    .forEach(\.path, action: \.path)
   }
 }

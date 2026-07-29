@@ -9,11 +9,17 @@ import Foundation
 import ComposableArchitecture
 
 extension SearchStore {
+  @Reducer
+  enum Path {
+    case showDetails(ShowDetailsStore)
+  }
+
   @ObservableState
   struct SearchState {
     var phase: SearchPhase = .ready
     var searchText: String
     var showsSearchResult: [ShowResponse]
+    var path = StackState<Path.State>()
   }
 
   enum SearchPhase: Equatable {
@@ -24,9 +30,12 @@ extension SearchStore {
     case showingSearchResult
   }
   
+  @CasePathable
   enum SearchActions {
     case search(String)
     case searchSuccess([ShowResponse])
     case searchFailed(Error)
+    case showDetails(for: ShowResponse)
+    case path(StackAction<Path.State, Path.Action>)
   }
 }

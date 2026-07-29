@@ -19,17 +19,24 @@ struct SearchView: View {
   )
   
   var body: some View {
-    VStack(spacing: Tokens.Spacing.medium.rawValue) {
-      SearchTextField(
-        debouncedText: Binding (
-          get: { store.searchText },
-          set: { handleDebouncedSearch($0) }
-        ))
-      .padding(.horizontal)
-      searchContent
+    NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+      VStack(spacing: Tokens.Spacing.medium.rawValue) {
+        SearchTextField(
+          debouncedText: Binding (
+            get: { store.searchText },
+            set: { handleDebouncedSearch($0) }
+          ))
+        .padding(.horizontal)
+        searchContent
+      }
+      .padding(.top)
+      .navigationTitle("Search")
+    } destination: { store in
+      switch store.case {
+      case let .showDetails(store):
+        ShowDetailsView(store: store)
+      }
     }
-    .padding(.top)
-    .navigationTitle("Search")
   }
   
   @ViewBuilder
@@ -59,6 +66,9 @@ struct SearchView: View {
       LazyVGrid(columns: columns) {
         ForEach(store.showsSearchResult, id: \.id) { show in
           ShowCardView(show: show)
+            .onTapGesture {
+              store.send(.showDetails(for: show))
+            }
         }
       }
       .padding(.top)
