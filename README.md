@@ -8,6 +8,7 @@ The project is focused on a unidirectional data-flow style: views render state, 
 
 - Tab-based SwiftUI app shell with Home, Search, Favorites, and Settings sections.
 - Home screen that fetches and lists shows.
+- Search screen with debounced TV show lookup, loading, empty, error, and result states.
 - Show details screen with a banner image, summary, genres, schedule, status, rating, and episode navigation.
 - Episodes screen that fetches episodes, groups them by season, and displays collapsible season rows.
 - Reusable UI components for async images, loading state, typography, and spacing tokens.
@@ -17,9 +18,16 @@ The project is focused on a unidirectional data-flow style: views render state, 
 
 <p>
   <img src="TatsuFlix-MVI/AppScreenshots/home.png" alt="Home screen" width="250">
+  <img src="TatsuFlix-MVI/AppScreenshots/search.png" alt="Search screen" width="250">
+  <img src="TatsuFlix-MVI/AppScreenshots/searchResult.png" alt="Search results screen" width="250">
   <img src="TatsuFlix-MVI/AppScreenshots/showDetails.png" alt="Show details screen" width="250">
   <img src="TatsuFlix-MVI/AppScreenshots/seasons.png" alt="Collapsed seasons screen" width="250">
   <img src="TatsuFlix-MVI/AppScreenshots/Season-episodes.png" alt="Expanded season episodes screen" width="250">
+</p>
+
+<p>
+  <img src="TatsuFlix-MVI/AppScreenshots/searchNotFound.png" alt="Search no results screen" width="250">
+  <img src="TatsuFlix-MVI/AppScreenshots/searchError.png" alt="Search error screen" width="250">
 </p>
 
 ## Architecture
@@ -36,10 +44,11 @@ Each feature is split into:
 Examples:
 
 - `HomeStore`, `HomeState`, and `HomeView`
+- `SearchStore`, `SearchState`, and `SearchView`
 - `ShowDetailsStore`, `ShowDetailsState`, and `ShowDetailsView`
 - `EpisodesStore`, `EpisodesState`, and `EpisodesView`
 
-Navigation is handled with a mix of SwiftUI navigation APIs and TCA navigation state. `HomeStore.Path` models navigation from Home into Show Details, while `ShowDetailsStore.Destination` presents Episodes from the details screen.
+Navigation is handled with a mix of SwiftUI navigation APIs and TCA navigation state. `HomeStore.Path` models navigation from Home into Show Details, `SearchStore.Path` models navigation from Search results into Show Details, and `ShowDetailsStore.Destination` presents Episodes from the details screen.
 
 The app shell uses `AppTabView` and an observable `Router` to keep tab-specific navigation paths for Home, Search, Favorites, and Settings.
 
@@ -67,6 +76,7 @@ func send<T: APIRequest>(_ request: T) async throws -> T.Response
 Requests conform to `APIRequest`, which defines an associated `Response` type and an `Endpoint`. This keeps API calls strongly typed:
 
 - `GetShowsRequest` returns `[ShowResponse]`
+- `SearchShowsRequest` returns `[SearchSeriesResponse]`
 - `EpisodesRequest` returns `[EpisodeResponse]`
 
 
@@ -83,7 +93,6 @@ The app currently fetches data from TVMaze over the network, so an internet conn
 - Add localization for all user-facing strings.
 - Add local favorites persistence with SwiftData.
 - Implement the Favorites flow using persisted shows.
-- Add Search functionality.
 - Add Settings options such as theme, cache controls, and app information.
 - Add unit tests for reducers, networking, request building, and episode grouping.
 - Add functional tests for Home to Details to Episodes flows.
