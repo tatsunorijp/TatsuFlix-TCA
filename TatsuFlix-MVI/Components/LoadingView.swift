@@ -22,6 +22,7 @@ struct LoadingView: View {
     .background(Color(.systemBackground))
     .cornerRadius(15)
     .shadow(radius: 10)
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
   }
 }
 

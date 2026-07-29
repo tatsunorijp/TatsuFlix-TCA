@@ -38,21 +38,10 @@ struct HomeView: View {
       ScrollView {
         LazyVGrid(columns: columns) {
           ForEach(store.shows, id: \.id) { show in
-            VStack {
-              AsyncImageView(urlString: show.image?.medium)
-                .frame(width: 100, height: 150)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-
-                HeadlineText(show.name, isBold: true)
-                HStack {
-                  BodyText("Rating")
-                  BodyText(String(format: "%.2f", show.rating.average ?? 0.0))
-                }
-            }
-            .onTapGesture {
-              store.send(.showDetails(for: show))
-            }
-            .padding(.top, 16)
+            ShowCardView(show: show)
+              .onTapGesture {
+                store.send(.showDetails(for: show))
+              }
           }
         }
         .padding(.top)

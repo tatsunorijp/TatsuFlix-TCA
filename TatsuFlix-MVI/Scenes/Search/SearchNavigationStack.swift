@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ComposableArchitecture
 
 enum SearchRouterPaths: Hashable {
   case search
@@ -19,13 +20,27 @@ struct SearchNavigationStack: View {
     @Bindable var router = router
     
     NavigationStack(path: $router.search) {
-      Text("Search screem")
-        .navigationDestination(for: SearchRouterPaths.self) { route in
-          switch route {
-          case .search:
-            Text("Search screen")
-          }
+      SearchView(
+        store: Store(initialState: SearchStore.State(
+          searchText: "",
+          showsSearchResult: []
+        )) {
+          SearchStore(service: NetworkClient())
         }
+      )
+      .navigationDestination(for: SearchRouterPaths.self) { route in
+        switch route {
+        case .search:
+          SearchView(
+            store: Store(initialState: SearchStore.State(
+              searchText: "",
+              showsSearchResult: []
+            )) {
+              SearchStore(service: NetworkClient())
+            }
+          )
+        }
+      }
     }
   }
 }
