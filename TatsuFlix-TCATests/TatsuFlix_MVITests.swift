@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import TatsuFlix_MVI
+@testable import TatsuFlix_TCA
 
 final class TatsuFlix_MVITests: XCTestCase {
 

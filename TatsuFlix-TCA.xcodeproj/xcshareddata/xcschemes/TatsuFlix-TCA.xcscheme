@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "08076C6C3015A94B00B48B23"
-               BuildableName = "TatsuFlix-MVI.app"
-               BlueprintName = "TatsuFlix-MVI"
-               ReferencedContainer = "container:TatsuFlix-MVI.xcodeproj">
+               BuildableName = "TatsuFlix-TCA.app"
+               BlueprintName = "TatsuFlix-TCA"
+               ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "08076C7B3015A94C00B48B23"
-               BuildableName = "TatsuFlix-MVITests.xctest"
-               BlueprintName = "TatsuFlix-MVITests"
-               ReferencedContainer = "container:TatsuFlix-MVI.xcodeproj">
+               BuildableName = "TatsuFlix-TCATests.xctest"
+               BlueprintName = "TatsuFlix-TCATests"
+               ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "08076C853015A94C00B48B23"
-               BuildableName = "TatsuFlix-MVIUITests.xctest"
-               BlueprintName = "TatsuFlix-MVIUITests"
-               ReferencedContainer = "container:TatsuFlix-MVI.xcodeproj">
+               BuildableName = "TatsuFlix-TCAUITests.xctest"
+               BlueprintName = "TatsuFlix-TCAUITests"
+               ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "08076C6C3015A94B00B48B23"
-            BuildableName = "TatsuFlix-MVI.app"
-            BlueprintName = "TatsuFlix-MVI"
-            ReferencedContainer = "container:TatsuFlix-MVI.xcodeproj">
+            BuildableName = "TatsuFlix-TCA.app"
+            BlueprintName = "TatsuFlix-TCA"
+            ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -87,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "08076C6C3015A94B00B48B23"
-            BuildableName = "TatsuFlix-MVI.app"
-            BlueprintName = "TatsuFlix-MVI"
-            ReferencedContainer = "container:TatsuFlix-MVI.xcodeproj">
+            BuildableName = "TatsuFlix-TCA.app"
+            BlueprintName = "TatsuFlix-TCA"
+            ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

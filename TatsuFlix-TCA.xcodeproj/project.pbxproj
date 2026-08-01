@@ -16,37 +16,37 @@
 			containerPortal = 08076C653015A94B00B48B23 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 08076C6C3015A94B00B48B23;
-			remoteInfo = "TatsuFlix-MVI";
+			remoteInfo = "TatsuFlix-TCA";
 		};
 		08076C873015A94C00B48B23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08076C653015A94B00B48B23 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 08076C6C3015A94B00B48B23;
-			remoteInfo = "TatsuFlix-MVI";
+			remoteInfo = "TatsuFlix-TCA";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08076C6D3015A94B00B48B23 /* TatsuFlix-MVI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TatsuFlix-MVI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		08076C7C3015A94C00B48B23 /* TatsuFlix-MVITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TatsuFlix-MVITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		08076C863015A94C00B48B23 /* TatsuFlix-MVIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TatsuFlix-MVIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08076C6D3015A94B00B48B23 /* TatsuFlix-TCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TatsuFlix-TCA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08076C7C3015A94C00B48B23 /* TatsuFlix-TCATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TatsuFlix-TCATests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		08076C863015A94C00B48B23 /* TatsuFlix-TCAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TatsuFlix-TCAUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		08076C6F3015A94B00B48B23 /* TatsuFlix-MVI */ = {
+		08076C6F3015A94B00B48B23 /* TatsuFlix-TCA */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "TatsuFlix-MVI";
+			path = "TatsuFlix-TCA";
 			sourceTree = "<group>";
 		};
-		08076C7F3015A94C00B48B23 /* TatsuFlix-MVITests */ = {
+		08076C7F3015A94C00B48B23 /* TatsuFlix-TCATests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "TatsuFlix-MVITests";
+			path = "TatsuFlix-TCATests";
 			sourceTree = "<group>";
 		};
-		08076C893015A94C00B48B23 /* TatsuFlix-MVIUITests */ = {
+		08076C893015A94C00B48B23 /* TatsuFlix-TCAUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "TatsuFlix-MVIUITests";
+			path = "TatsuFlix-TCAUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -80,9 +80,9 @@
 		08076C643015A94B00B48B23 = {
 			isa = PBXGroup;
 			children = (
-				08076C6F3015A94B00B48B23 /* TatsuFlix-MVI */,
-				08076C7F3015A94C00B48B23 /* TatsuFlix-MVITests */,
-				08076C893015A94C00B48B23 /* TatsuFlix-MVIUITests */,
+				08076C6F3015A94B00B48B23 /* TatsuFlix-TCA */,
+				08076C7F3015A94C00B48B23 /* TatsuFlix-TCATests */,
+				08076C893015A94C00B48B23 /* TatsuFlix-TCAUITests */,
 				08082C0B301694B80013AF2D /* Frameworks */,
 				08076C6E3015A94B00B48B23 /* Products */,
 			);
@@ -91,9 +91,9 @@
 		08076C6E3015A94B00B48B23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08076C6D3015A94B00B48B23 /* TatsuFlix-MVI.app */,
-				08076C7C3015A94C00B48B23 /* TatsuFlix-MVITests.xctest */,
-				08076C863015A94C00B48B23 /* TatsuFlix-MVIUITests.xctest */,
+				08076C6D3015A94B00B48B23 /* TatsuFlix-TCA.app */,
+				08076C7C3015A94C00B48B23 /* TatsuFlix-TCATests.xctest */,
+				08076C863015A94C00B48B23 /* TatsuFlix-TCAUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		08076C6C3015A94B00B48B23 /* TatsuFlix-MVI */ = {
+		08076C6C3015A94B00B48B23 /* TatsuFlix-TCA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08076C903015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-MVI" */;
+			buildConfigurationList = 08076C903015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-TCA" */;
 			buildPhases = (
 				08076C693015A94B00B48B23 /* Sources */,
 				08076C6A3015A94B00B48B23 /* Frameworks */,
@@ -121,19 +121,19 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				08076C6F3015A94B00B48B23 /* TatsuFlix-MVI */,
+				08076C6F3015A94B00B48B23 /* TatsuFlix-TCA */,
 			);
-			name = "TatsuFlix-MVI";
+			name = "TatsuFlix-TCA";
 			packageProductDependencies = (
 				08082C0C301694B80013AF2D /* ComposableArchitecture */,
 			);
-			productName = "TatsuFlix-MVI";
-			productReference = 08076C6D3015A94B00B48B23 /* TatsuFlix-MVI.app */;
+			productName = "TatsuFlix-TCA";
+			productReference = 08076C6D3015A94B00B48B23 /* TatsuFlix-TCA.app */;
 			productType = "com.apple.product-type.application";
 		};
-		08076C7B3015A94C00B48B23 /* TatsuFlix-MVITests */ = {
+		08076C7B3015A94C00B48B23 /* TatsuFlix-TCATests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08076C933015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-MVITests" */;
+			buildConfigurationList = 08076C933015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-TCATests" */;
 			buildPhases = (
 				08076C783015A94C00B48B23 /* Sources */,
 				08076C793015A94C00B48B23 /* Frameworks */,
@@ -145,18 +145,18 @@
 				08076C7E3015A94C00B48B23 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				08076C7F3015A94C00B48B23 /* TatsuFlix-MVITests */,
+				08076C7F3015A94C00B48B23 /* TatsuFlix-TCATests */,
 			);
-			name = "TatsuFlix-MVITests";
+			name = "TatsuFlix-TCATests";
 			packageProductDependencies = (
 			);
-			productName = "TatsuFlix-MVITests";
-			productReference = 08076C7C3015A94C00B48B23 /* TatsuFlix-MVITests.xctest */;
+			productName = "TatsuFlix-TCATests";
+			productReference = 08076C7C3015A94C00B48B23 /* TatsuFlix-TCATests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		08076C853015A94C00B48B23 /* TatsuFlix-MVIUITests */ = {
+		08076C853015A94C00B48B23 /* TatsuFlix-TCAUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08076C963015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-MVIUITests" */;
+			buildConfigurationList = 08076C963015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-TCAUITests" */;
 			buildPhases = (
 				08076C823015A94C00B48B23 /* Sources */,
 				08076C833015A94C00B48B23 /* Frameworks */,
@@ -168,13 +168,13 @@
 				08076C883015A94C00B48B23 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				08076C893015A94C00B48B23 /* TatsuFlix-MVIUITests */,
+				08076C893015A94C00B48B23 /* TatsuFlix-TCAUITests */,
 			);
-			name = "TatsuFlix-MVIUITests";
+			name = "TatsuFlix-TCAUITests";
 			packageProductDependencies = (
 			);
-			productName = "TatsuFlix-MVIUITests";
-			productReference = 08076C863015A94C00B48B23 /* TatsuFlix-MVIUITests.xctest */;
+			productName = "TatsuFlix-TCAUITests";
+			productReference = 08076C863015A94C00B48B23 /* TatsuFlix-TCAUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 08076C683015A94B00B48B23 /* Build configuration list for PBXProject "TatsuFlix-MVI" */;
+			buildConfigurationList = 08076C683015A94B00B48B23 /* Build configuration list for PBXProject "TatsuFlix-TCA" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -217,9 +217,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				08076C6C3015A94B00B48B23 /* TatsuFlix-MVI */,
-				08076C7B3015A94C00B48B23 /* TatsuFlix-MVITests */,
-				08076C853015A94C00B48B23 /* TatsuFlix-MVIUITests */,
+				08076C6C3015A94B00B48B23 /* TatsuFlix-TCA */,
+				08076C7B3015A94C00B48B23 /* TatsuFlix-TCATests */,
+				08076C853015A94C00B48B23 /* TatsuFlix-TCAUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,12 +275,12 @@
 /* Begin PBXTargetDependency section */
 		08076C7E3015A94C00B48B23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 08076C6C3015A94B00B48B23 /* TatsuFlix-MVI */;
+			target = 08076C6C3015A94B00B48B23 /* TatsuFlix-TCA */;
 			targetProxy = 08076C7D3015A94C00B48B23 /* PBXContainerItemProxy */;
 		};
 		08076C883015A94C00B48B23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 08076C6C3015A94B00B48B23 /* TatsuFlix-MVI */;
+			target = 08076C6C3015A94B00B48B23 /* TatsuFlix-TCA */;
 			targetProxy = 08076C873015A94C00B48B23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -426,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-MVI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-TCA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -460,7 +460,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-MVI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-TCA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -483,7 +483,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-MVITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-TCATests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -491,7 +491,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TatsuFlix-MVI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TatsuFlix-MVI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TatsuFlix-TCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TatsuFlix-TCA";
 			};
 			name = Debug;
 		};
@@ -505,7 +505,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-MVITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-TCATests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -513,7 +513,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TatsuFlix-MVI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TatsuFlix-MVI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TatsuFlix-TCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TatsuFlix-TCA";
 			};
 			name = Release;
 		};
@@ -525,7 +525,7 @@
 				DEVELOPMENT_TEAM = DHFMA3M4H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-MVIUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-TCAUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -533,7 +533,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "TatsuFlix-MVI";
+				TEST_TARGET_NAME = "TatsuFlix-TCA";
 			};
 			name = Debug;
 		};
@@ -545,7 +545,7 @@
 				DEVELOPMENT_TEAM = DHFMA3M4H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-MVIUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatsu.TatsuFlix-TCAUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -553,14 +553,14 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "TatsuFlix-MVI";
+				TEST_TARGET_NAME = "TatsuFlix-TCA";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		08076C683015A94B00B48B23 /* Build configuration list for PBXProject "TatsuFlix-MVI" */ = {
+		08076C683015A94B00B48B23 /* Build configuration list for PBXProject "TatsuFlix-TCA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08076C8E3015A94C00B48B23 /* Debug */,
@@ -569,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08076C903015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-MVI" */ = {
+		08076C903015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-TCA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08076C913015A94C00B48B23 /* Debug */,
@@ -578,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08076C933015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-MVITests" */ = {
+		08076C933015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-TCATests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08076C943015A94C00B48B23 /* Debug */,
@@ -587,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08076C963015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-MVIUITests" */ = {
+		08076C963015A94C00B48B23 /* Build configuration list for PBXNativeTarget "TatsuFlix-TCAUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08076C973015A94C00B48B23 /* Debug */,
@@ -606,6 +606,8 @@
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.26.1;
 			};
+			traits = (
+			);
 		};
 /* End XCRemoteSwiftPackageReference section */
 
