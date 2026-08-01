@@ -6,7 +6,7 @@
 //
 
 import Testing
-@testable import TatsuFlix_MVI
+@testable import TatsuFlix_TCA
 
 struct LocalShowsModelTests {
   @Test func testInitFromShowResponse() {

@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Summary"
+  short_description: "Draft concise pull request titles and bodies"
+  default_prompt: "Use $pr-summary to draft a concise PR title and description."
