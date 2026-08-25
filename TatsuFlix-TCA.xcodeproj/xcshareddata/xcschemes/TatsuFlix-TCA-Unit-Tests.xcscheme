@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "08076C6C3015A94B00B48B23"
-               BuildableName = "TatsuFlix-MVI.app"
-               BlueprintName = "TatsuFlix-MVI"
-               ReferencedContainer = "container:TatsuFlix-MVI.xcodeproj">
+               BuildableName = "TatsuFlix-TCA.app"
+               BlueprintName = "TatsuFlix-TCA"
+               ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,28 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "08076C6C3015A94B00B48B23"
+            BuildableName = "TatsuFlix-TCA.app"
+            BlueprintName = "TatsuFlix-TCA"
+            ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "08076C7B3015A94C00B48B23"
+               BuildableName = "TatsuFlix-TCATests.xctest"
+               BlueprintName = "TatsuFlix-TCATests"
+               ReferencedContainer = "container:TatsuFlix-TCA.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -39,8 +61,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      queueDebuggingEnableBacktraceRecording = "Yes">
+      allowLocationSimulation = "YES">
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

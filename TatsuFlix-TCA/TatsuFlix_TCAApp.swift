@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct TatsuFlix_MVIApp: App {
+struct TatsuFlix_TCAApp: App {
 //  var sharedModelContainer: ModelContainer = {
 //    let schema = Schema([
 //      Item.self,
