@@ -17,12 +17,12 @@ The project is focused on a unidirectional data-flow style: views render state, 
 ## Screenshots
 
 <p>
-  <img src="TatsuFlix-MVI/AppScreenshots/home.png" alt="Home screen" width="250">
-  <img src="TatsuFlix-MVI/AppScreenshots/search.png" alt="Search screen" width="250">
-  <img src="TatsuFlix-MVI/AppScreenshots/searchResult.png" alt="Search results screen" width="250">
-  <img src="TatsuFlix-MVI/AppScreenshots/showDetails.png" alt="Show details screen" width="250">
-  <img src="TatsuFlix-MVI/AppScreenshots/seasons.png" alt="Collapsed seasons screen" width="250">
-  <img src="TatsuFlix-MVI/AppScreenshots/Season-episodes.png" alt="Expanded season episodes screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/home.png" alt="Home screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/search.png" alt="Search screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/searchResult.png" alt="Search results screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/showDetails.png" alt="Show details screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/seasons.png" alt="Collapsed seasons screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/Season-episodes.png" alt="Expanded season episodes screen" width="250">
 </p>
 
 <p>
