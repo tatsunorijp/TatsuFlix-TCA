@@ -1,0 +1,71 @@
+name: iOS CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Build and test on iPhone 17 Pro
+    runs-on: macos-26
+    timeout-minutes: 45
+
+    env:
+      PROJECT: TatsuFlix-TCA.xcodeproj
+      SCHEME: TatsuFlix-TCA
+      DESTINATION: platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache Swift Package Manager dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ runner.temp }}/SourcePackages
+            ~/Library/Caches/org.swift.swiftpm
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: Resolve Swift Package Manager dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -clonedSourcePackagesDirPath "$RUNNER_TEMP/SourcePackages" \
+            -onlyUsePackageVersionsFromResolvedFile
+
+      - name: Build and test
+        run: |
+          xcodebuild test \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -destination "$DESTINATION" \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            -clonedSourcePackagesDirPath "$RUNNER_TEMP/SourcePackages" \
+            -disableAutomaticPackageResolution \
+            -skipMacroValidation \
+            -skipPackagePluginValidation \
+            -enableCodeCoverage YES \
+            -resultBundlePath "$RUNNER_TEMP/TestResults.xcresult" \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Upload test results and coverage
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-test-results-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/TestResults.xcresult
+          if-no-files-found: warn
+          retention-days: 14
