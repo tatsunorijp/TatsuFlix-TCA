@@ -23,9 +23,6 @@ jobs:
       PROJECT: TatsuFlix-TCA.xcodeproj
       SCHEME: TatsuFlix-TCA
       DESTINATION: platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5
-      DERIVED_DATA_PATH: ${{ runner.temp }}/DerivedData
-      RESULT_BUNDLE_PATH: ${{ runner.temp }}/TestResults.xcresult
-      SPM_CACHE_PATH: ${{ runner.temp }}/SourcePackages
 
     steps:
       - name: Checkout
@@ -35,7 +32,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ${{ env.SPM_CACHE_PATH }}
+            ${{ runner.temp }}/SourcePackages
             ~/Library/Caches/org.swift.swiftpm
           key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
           restore-keys: |
@@ -46,7 +43,7 @@ jobs:
           xcodebuild -resolvePackageDependencies \
             -project "$PROJECT" \
             -scheme "$SCHEME" \
-            -clonedSourcePackagesDirPath "$SPM_CACHE_PATH" \
+            -clonedSourcePackagesDirPath "$RUNNER_TEMP/SourcePackages" \
             -onlyUsePackageVersionsFromResolvedFile
 
       - name: Build and test
@@ -55,11 +52,11 @@ jobs:
             -project "$PROJECT" \
             -scheme "$SCHEME" \
             -destination "$DESTINATION" \
-            -derivedDataPath "$DERIVED_DATA_PATH" \
-            -clonedSourcePackagesDirPath "$SPM_CACHE_PATH" \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            -clonedSourcePackagesDirPath "$RUNNER_TEMP/SourcePackages" \
             -disableAutomaticPackageResolution \
             -enableCodeCoverage YES \
-            -resultBundlePath "$RESULT_BUNDLE_PATH" \
+            -resultBundlePath "$RUNNER_TEMP/TestResults.xcresult" \
             CODE_SIGNING_ALLOWED=NO
 
       - name: Upload test results and coverage
@@ -67,6 +64,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios-test-results-${{ github.run_attempt }}
-          path: ${{ env.RESULT_BUNDLE_PATH }}
+          path: ${{ runner.temp }}/TestResults.xcresult
           if-no-files-found: warn
           retention-days: 14
