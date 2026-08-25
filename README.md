@@ -26,8 +26,8 @@ The project is focused on a unidirectional data-flow style: views render state, 
 </p>
 
 <p>
-  <img src="TatsuFlix-MVI/AppScreenshots/searchNotFound.png" alt="Search no results screen" width="250">
-  <img src="TatsuFlix-MVI/AppScreenshots/searchError.png" alt="Search error screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/searchNotFound.png" alt="Search no results screen" width="250">
+  <img src="TatsuFlix-TCA/AppScreenshots/searchError.png" alt="Search error screen" width="250">
 </p>
 
 ## Architecture
