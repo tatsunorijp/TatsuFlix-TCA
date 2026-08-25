@@ -33,6 +33,7 @@ extension SearchStore {
   @CasePathable
   enum SearchActions {
     case search(String)
+    case searchStarted
     case searchSuccess([ShowResponse])
     case searchFailed(Error)
     case showDetails(for: ShowResponse)

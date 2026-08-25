@@ -22,10 +22,11 @@ struct SearchView: View {
     NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
       VStack(spacing: Tokens.Spacing.medium.rawValue) {
         SearchTextField(
-          debouncedText: Binding (
+          searchText: Binding(
             get: { store.searchText },
-            set: { handleDebouncedSearch($0) }
-          ))
+            set: { store.send(.search($0)) }
+          )
+        )
         .padding(.horizontal)
         searchContent
       }
@@ -99,16 +100,10 @@ struct SearchView: View {
       headline: "Something went wrong"
     )
   }
-  
-  private func handleDebouncedSearch(_ text: String) {
-    let query = text.trimmingCharacters(in: .whitespacesAndNewlines)
-    store.send(.search(query))
-  }
 }
 
 private struct SearchTextField: View {
-  @Binding var debouncedText: String
-  @State var searchText: String = ""
+  @Binding var searchText: String
 
   var body: some View {
     HStack {
@@ -131,19 +126,6 @@ private struct SearchTextField: View {
     .padding(Tokens.Spacing.medium.rawValue)
     .background(Color(.systemGray6))
     .cornerRadius(10)
-    // UI Logic
-    .task(id: searchText) {
-      do {
-        if searchText.isEmpty {
-          debouncedText = searchText
-        } else {
-          try await Task.sleep(for: .seconds(1))
-          debouncedText = searchText
-        }
-      } catch {
-        // Task was cancelled because user typed a new character
-      }
-    }
   }
 }
 
