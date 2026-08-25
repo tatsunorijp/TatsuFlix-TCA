@@ -12,6 +12,12 @@ import ComposableArchitecture
 struct SearchStore {
   typealias State = SearchState
   typealias Action = SearchActions
+
+  private nonisolated enum CancelID: Hashable, Sendable {
+    case search
+  }
+
+  @Dependency(\.continuousClock) private var clock
   
   let service: NetworkClientProtocol
   
@@ -22,21 +28,39 @@ struct SearchStore {
   var body: some Reducer<State, Action> {
     Reduce { state, action in
       switch action {
-      case let .search(query):
-        guard !query.isEmpty else {
-          state.phase = .ready
+      case let .search(searchText):
+        guard searchText != state.searchText else {
           return .none
         }
-        state.phase = .loading
+
+        state.searchText = searchText
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard !query.isEmpty else {
+          state.phase = .ready
+          state.showsSearchResult = []
+          return .cancel(id: CancelID.search)
+        }
+
         return .run { send in
           do {
+            try await clock.sleep(for: .seconds(1))
+            // TCA state can only be mutated synchronously in the reducer,
+            // so this action transitions the state after the debounce.
+            await send(.searchStarted)
+
             let searchResult = try await service.send(SearchShowsRequest(query: query))
-            try await Task.sleep(for: .seconds(2))
             await send(.searchSuccess(searchResult.map(\.show)))
           } catch {
+            // NetworkClient may wrap a cancellation in ApiError.unknown.
+            guard !Task.isCancelled else { return }
             await send(.searchFailed(error))
           }
         }
+        .cancellable(id: CancelID.search, cancelInFlight: true)
+      case .searchStarted:
+        state.phase = .loading
+        return .none
       case let .searchSuccess(shows):
         if !shows.isEmpty {
           state.phase = .showingSearchResult
