@@ -17,11 +17,11 @@ jobs:
   test:
     name: Build and test on iPhone 17 Pro
     runs-on: macos-26
-    timeout-minutes: 45
+    timeout-minutes: 20
 
     env:
       PROJECT: TatsuFlix-TCA.xcodeproj
-      SCHEME: TatsuFlix-TCA
+      SCHEME: TatsuFlix-TCA-Unit-Tests
       DESTINATION: platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5
 
     steps:
@@ -57,6 +57,7 @@ jobs:
             -disableAutomaticPackageResolution \
             -skipMacroValidation \
             -skipPackagePluginValidation \
+            -parallel-testing-enabled NO \
             -enableCodeCoverage YES \
             -resultBundlePath "$RUNNER_TEMP/TestResults.xcresult" \
             CODE_SIGNING_ALLOWED=NO
