@@ -1,6 +1,6 @@
-# TatsuFlix-MVI
+# TatsuFlix-TCA
 
-TatsuFlix-MVI is an iOS app built with SwiftUI and The Composable Architecture. It consumes the TVMaze API to browse TV shows, open show details, and view episodes.
+TatsuFlix-TCA is an iOS app built with SwiftUI and The Composable Architecture. It consumes the TVMaze API to browse TV shows, open show details, and view episodes.
 
 The project is focused on a unidirectional data-flow style: views render state, user interactions send actions, reducers mutate state and run effects, and networking is handled with Swift concurrency.
 
